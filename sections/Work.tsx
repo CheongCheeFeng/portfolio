@@ -1,3 +1,3 @@
 export const Work = () => {
-  return <div>Work</div>;
+  return <div className="bg-primary">Work</div>;
 };

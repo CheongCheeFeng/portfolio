@@ -7,8 +7,8 @@ const App: NextPage = () => {
     <div>
       <Navbar />
       <Home />
-      <Work />
       <Skills />
+      <Work />
       <Contact />
     </div>
   );

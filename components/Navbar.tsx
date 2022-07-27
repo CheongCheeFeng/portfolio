@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
+import { HiMenu } from "react-icons/hi";
 import { Drawer } from "./Drawer";
 
 export const Navbar = () => {
-  const navItems = ["home", "about", "work", "skills", "contact"];
+  const navItems = ["home", "skills", "work", "contact"];
 
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -56,8 +56,8 @@ export const Navbar = () => {
         ))}
       </ul>
 
-      <div className="sm:hidden rounded-half bg-white w-9 h-9 flex justify-center items-center">
-        <HiMenuAlt4 size={28} color="black" onClick={() => setToggle(true)} />
+      <div className="sm:hidden w-9 h-9 flex justify-center items-center">
+        <HiMenu size={28} color="white" onClick={() => setToggle(true)} />
         <Drawer toggle={toggle} setToggle={setToggle}>
           <ul className="flex flex-col mt-16 mx-10">
             {navItems.map((item, index) => (

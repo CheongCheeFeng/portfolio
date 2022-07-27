@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#121212",
+      },
       backgroundImage: {
         "menu-background": "url('/images/menu-background.png')",
         banner: "url('/images/banner.png')",

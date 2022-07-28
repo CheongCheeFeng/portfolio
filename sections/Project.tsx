@@ -7,28 +7,35 @@ export const Project = () => {
       url: "https://play.google.com/store/apps/details?id=com.Butter_Soft.TryAngle_Test",
       category: "Mobile Game",
       image: "/images/projects/tryangle.png",
+      techstack: ["unity", "c#"],
     },
     {
       title: "Monash Tutor Allocation System",
       url: "http://monash-tas.herokuapp.com/",
       category: "Web App",
       image: "/images/projects/tas.png",
+      techstack: ["react", "docker", "express"],
     },
     {
       title: "ReportCare App by GreenSHeart",
       url: "https://greensheart.com/",
       category: "Mobile App",
       image: "/images/projects/greensheart.png",
+      techstack: ["react-native", "aws", "graphql"],
     },
     {
       title: "Actions Regenerate Automator",
       category: "Mobile App",
       url: "https://gitlab.com/cheefengcheong/accessibilityservice",
+      image: "/images/projects/accessibilityservice.png",
+      techstack: ["android", "flask", "redis"],
     },
     {
       title: "My Portfolio Website",
       category: "Web App",
-      url: "https://cheefengcheong.com/",
+      url: "",
+      image: "/images/projects/portfolio.png",
+      techstack: ["next.js", "tailwindcss", "typescript"],
     },
   ];
 
@@ -46,7 +53,7 @@ export const Project = () => {
           {projects.map((project, index) => (
             <div
               className="w-[270px] flex-col m-8 p-4 rounded-lg bg-white text-black cursor-pointer hover:scale-105 transition duration-300 flex justify-center items-center"
-              key={index}
+              key={`project-${project}${index}`}
             >
               <div className="w-full h-[230px] relative flex justify-center items-center">
                 <img
@@ -77,6 +84,17 @@ export const Project = () => {
                     {project.category}
                   </p>
                 </div>
+              </div>
+
+              <div className="flex justify-center items-center">
+                {project.techstack.map((tech, index) => (
+                  <div
+                    key={`tag-${tech}${index}`}
+                    className="mx-1 text-xs inline-block font-bold px-2 py-[2px] rounded-lg bg-[#e2e8f0] text-gray-800  border-zinc-400"
+                  >
+                    {tech}
+                  </div>
+                ))}
               </div>
             </div>
           ))}

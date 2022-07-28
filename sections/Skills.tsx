@@ -21,7 +21,7 @@ export const Skills = () => {
             <div className=" flex flex-wrap items-center 2xl:w-1/2 justify-center 2xl:justify-center 2xl:mr-10">
               {skills.map((skill, index) => (
                 <div
-                  key={`link-${skill}-${index}`}
+                  key={`skills-${skill}-${index}`}
                   className="w-1/4 m-4 lg:w-1/5"
                 >
                   <div className="p-5 bg-white rounded-full">

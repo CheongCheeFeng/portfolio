@@ -4,7 +4,7 @@ import { HiMenu } from "react-icons/hi";
 import { Drawer } from "./Drawer";
 
 export const Navbar = () => {
-  const navItems = ["home", "skills", "work", "contact"];
+  const navItems = ["home", "skills", "projects", "contact"];
 
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);

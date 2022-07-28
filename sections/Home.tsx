@@ -43,18 +43,18 @@ export const Home = () => {
   }, [delta, loopNum, isDeleting, text]);
 
   return (
-    <div className="w-screen h-screen bg-banner bg-cover pt-[230px] pb-[70px] px-16 sm:px-[6rem] lg:px-[10rem] xl:px-[17rem] md:flex">
-      <div className="lg:w-5/6 xl:w-[95%]">
+    <div className="w-screen h-screen bg-banner bg-cover pt-[80px] xl:pt-[230px] sm:pb-[70px] px-2 sm:px-[6rem] lg:px-[10rem] xl:px-[17rem] md:flex">
+      <div className="lg:w-4/6 xl:w-[95%]">
         <span className="font-bold py-2 px-[10px] text-lg sm:text-xl border border-white border-opacity-50 tracking-wider bg-gradient1 mb-4 inline-block">
           Welcome to my Portfolio
         </span>
-        <h1 className="font-mono text-4xl lg:text-6xl font-bold text-gray-100">
+        <h1 className="font-mono text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-100">
           {`Hi! I'm Chee Feng`}{" "}
           <div className="animate-wave inline-block">👋</div>
         </h1>
 
         <span
-          className="font-mono text-4xl lg:text-6xl font-bold text-gray-100"
+          className="font-mono text-3xl sm:text-4xl lg:text-6xl font-bold text-gray-100"
           data-period="1000"
           data-rotate='[ "Freelancer", "Software Engineer", ]'
         >
@@ -85,21 +85,13 @@ export const Home = () => {
           />
         </button>
       </div>
-      <div className=" absolute -bottom-6 right-12 md:right-20 lg:right-32 xl:static xl:flex xl:ml-auto">
+      <div className=" absolute -bottom-6 right-12 w-2/3 h-auto ml-auto xl:static xl:flex xl:ml-auto">
         <img
-          className="animate-updown w-[350px] h-[100] md:w-[400px]  xl:w-[600px]"
+          className="animate-updown w-full h-auto  ml-auto  sm:w-[350px] sm:h-[100] md:w-[400px]  xl:w-[600px]"
           src={"/me.svg"}
           alt={"my drawing"}
         />
       </div>
-      {/* <Image
-        className="animate-updown"
-        src={"/me.svg"}
-        alt={"my drawing"}
-        width={"600px"}
-        height={"600px"}
-        // layout={"responsive"}
-      /> */}
     </div>
   );
 };

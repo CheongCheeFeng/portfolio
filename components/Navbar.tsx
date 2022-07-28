@@ -57,7 +57,12 @@ export const Navbar = () => {
       </ul>
 
       <div className="sm:hidden w-9 h-9 flex justify-center items-center">
-        <HiMenu size={28} color="white" onClick={() => setToggle(true)} />
+        <HiMenu
+          className="cursor-pointer"
+          size={28}
+          color="white"
+          onClick={() => setToggle(true)}
+        />
         <Drawer toggle={toggle} setToggle={setToggle}>
           <ul className="flex flex-col mt-16 mx-10">
             {navItems.map((item, index) => (

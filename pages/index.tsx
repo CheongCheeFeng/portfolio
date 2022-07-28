@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { Navbar } from "../components";
-import { Home, Work, Skills, Contact } from "../sections";
+import { Home, Project, Skills, Contact } from "../sections";
 
 const App: NextPage = () => {
   return (
@@ -8,7 +8,7 @@ const App: NextPage = () => {
       <Navbar />
       <Home />
       <Skills />
-      <Work />
+      <Project />
       <Contact />
     </div>
   );

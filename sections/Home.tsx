@@ -43,7 +43,7 @@ export const Home = () => {
   }, [delta, loopNum, isDeleting, text]);
 
   return (
-    <div className="w-screen h-screen bg-banner bg-cover pt-[80px] xl:pt-[230px] sm:pb-[70px] px-2 sm:px-[6rem] lg:px-[10rem] xl:px-[17rem] md:flex">
+    <div className="bg-banner bg-cover pt-[80px] xl:pt-[230px] sm:pb-[70px] px-2 sm:px-[6rem] lg:px-[10rem] xl:px-[17rem] md:flex">
       <div className="lg:w-4/6 xl:w-[95%]">
         <span className="font-bold py-2 px-[10px] text-lg sm:text-xl border border-white border-opacity-50 tracking-wider bg-gradient1 mb-4 inline-block">
           Welcome to my Portfolio

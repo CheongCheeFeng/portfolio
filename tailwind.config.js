@@ -17,6 +17,8 @@ module.exports = {
         banner: "url('/images/banner.png')",
         gradient1:
           "linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%)",
+        "project-bg": "url('/images/project-bg.png')",
+        footer: "url('/images/footer.png')",
       },
       borderRadius: {
         half: "50%",

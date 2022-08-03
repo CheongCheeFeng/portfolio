@@ -12,8 +12,11 @@ export const Skills = () => {
   ];
 
   return (
-    <div className="relative pb-[50px] bg-primary flex-1 justify-center items-center">
-      <div className="max-w-md sm:max-w-xl  md:max-w-3xl lg:md:max-w-4xl xl:max-w-full xl:mx-[16rem] mx-auto">
+    <div
+      className="relative pb-[50px] bg-primary flex-1 justify-center items-center"
+      id="skills"
+    >
+      <div className="max-w-md sm:max-w-xl  md:max-w-3xl lg:md:max-w-4xl xl:max-w-full xl:mx-[16rem] mx-auto py-[40px]">
         <div className="bg-[#171717] rounded-[64px] text-center py-[60px] px-[50px]">
           <h2 className="text-5xl font-bold">Skills & Languages</h2>
           <p className="text-[#B8B8B8] text-lg mt-3 mb-16">

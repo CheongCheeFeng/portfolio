@@ -1,6 +1,6 @@
 import { ProjectCard, IProject } from "../components";
 
-export const Project = () => {
+export const Projects = () => {
   const projects: IProject[] = [
     {
       title: "TryAngle",
@@ -40,9 +40,12 @@ export const Project = () => {
   ];
 
   return (
-    <div className="relative pb-[50px] bg-black bg-project-bg bg-cover flex-1 justify-center items-center">
+    <div
+      className="relative pb-[50px] bg-black bg-project-bg bg-cover flex-1 justify-center items-center"
+      id="projects"
+    >
       <div className="max-w-md sm:max-w-xl  md:max-w-3xl lg:md:max-w-4xl xl:max-w-full xl:mx-[16rem] mx-auto">
-        <div className="text-center py-[60px] px-[50px]">
+        <div className="text-center py-[70px] px-[50px]">
           <h2 className="text-5xl font-bold">Projects</h2>
           <p className="text-[#B8B8B8] text-lg mt-3 ">
             Lorem Ipsum is simply dummy text of the printing and typesetting

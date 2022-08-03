@@ -2,10 +2,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { HiMenu } from "react-icons/hi";
 import { Drawer } from "./Drawer";
+import Link from "next/link";
 
 export const Navbar = () => {
   const navItems = ["home", "skills", "projects", "contact"];
-
+  const [activeNav, setActiveNav] = useState("#home");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -19,7 +20,6 @@ export const Navbar = () => {
     };
 
     window.addEventListener("scroll", onScroll);
-    console.log(scrolled);
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrolled]);
 
@@ -43,15 +43,22 @@ export const Navbar = () => {
           <li
             className="flex items-center justify-center mx-4 cursor-pointer flex-col group"
             key={`link-${item}-${index}`}
+            onClick={() => setActiveNav(`#${item}`)}
           >
-            <div className="w-2 h-2 bg-white rounded-half justify-start opacity-0 group-hover:opacity-100" />
-            <a
-              className="text-white no-underline uppercase font-medium text-lg
-              transision-all duration-200 ease-in-out opacity-75 group-hover:opacity-100"
-              href={`#${item}`}
-            >
-              {item}
-            </a>
+            <div
+              className={`w-2 h-2 bg-white rounded-half justify-start  group-hover:opacity-100 ${
+                activeNav === "#" + item ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            <Link href={`/#${item}`}>
+              <a
+                className={`text-white no-underline uppercase font-medium text-lg
+              transision-all duration-200 ease-in-out opacity-75 group-hover:opacity-100 
+              ${activeNav === "#" + item ? "opacity-100" : "opacity-75"}`}
+              >
+                {item}
+              </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -70,13 +77,15 @@ export const Navbar = () => {
                 className="flex items-start justify-start my-5"
                 key={`link-${item}-${index}`}
               >
-                <a
-                  className="text-white no-underline uppercase font-medium text-lg"
-                  href={`/#${item}`}
-                  onClick={() => setToggle(false)}
-                >
-                  {item}
-                </a>
+                <Link href={`/#${item}`}>
+                  <a
+                    className="text-white no-underline uppercase font-medium text-lg"
+                    href={`/#${item}`}
+                    onClick={() => setToggle(false)}
+                  >
+                    {item}
+                  </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiArrowRightCircle, FiDownload } from "react-icons/fi";
+import { FiArrowRightCircle } from "react-icons/fi";
 
 export const Home = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -43,7 +43,10 @@ export const Home = () => {
   }, [delta, loopNum, isDeleting, text]);
 
   return (
-    <div className="bg-banner bg-cover pt-[80px] xl:pt-[230px] sm:pb-[70px] px-2 sm:px-[6rem] lg:px-[10rem] xl:px-[17rem] md:flex">
+    <div
+      className="w-auto h-screen bg-banner bg-cover pt-[80px] xl:pt-[230px] sm:pb-[70px] px-2 sm:px-[6rem] lg:px-[10rem] xl:px-[17rem] md:flex"
+      id="home"
+    >
       <div className="lg:w-4/6 xl:w-[95%]">
         <span className="font-bold py-2 px-[10px] text-lg sm:text-xl border border-white border-opacity-50 tracking-wider bg-gradient1 mb-4 inline-block">
           Welcome to my Portfolio
@@ -67,23 +70,28 @@ export const Home = () => {
           voluptatum, excepturi nam eaque, praesentium nobis doloribus placeat
           ducimus minima nihil.
         </div>
-        <button
-          className="flex justify-center items-center text-xl font-bold my-4 group"
-          onClick={() => console.log("Download resume")}
+        <a
+          className="flex justify-left items-center text-xl font-bold my-4 group"
+          href="https://drive.google.com/file/d/1xmqSI5q_9E5kyEExMjfROJhpHHGxHeNu/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer"
         >
-          Download resume{" "}
-          <FiDownload className="ml-3 group-hover:animate-bounce" size={25} />
-        </button>
-        <button
-          className="flex justify-center items-center text-xl font-bold group"
-          onClick={() => console.log("connect")}
+          Check my resume{" "}
+          <FiArrowRightCircle
+            className="ml-3 group-hover:transition group-hover:ease-in-out group-hover:duration-300 group-hover:ml-6"
+            size={25}
+          />
+        </a>
+        <a
+          className="flex justify-left items-center text-xl font-bold group cursor-pointer"
+          href="#contact"
         >
           Let’s Connect{" "}
           <FiArrowRightCircle
             className="ml-3 group-hover:transition group-hover:ease-in-out group-hover:duration-300 group-hover:ml-6"
             size={25}
           />
-        </button>
+        </a>
       </div>
       <div className=" absolute -bottom-6 right-12 w-2/3 h-auto ml-auto xl:static xl:flex xl:ml-auto">
         <img

@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { FiArrowRightCircle } from "react-icons/fi";
 
-export const Home = () => {
+export const Home = ({
+  setActiveNav,
+}: {
+  setActiveNav: React.Dispatch<string>;
+}) => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
@@ -85,6 +89,7 @@ export const Home = () => {
         <a
           className="flex justify-left items-center text-xl font-bold group cursor-pointer"
           href="#contact"
+          onClick={() => setActiveNav("#contact")}
         >
           Let’s Connect{" "}
           <FiArrowRightCircle

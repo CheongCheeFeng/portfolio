@@ -1,7 +1,12 @@
 import Link from "next/link";
+import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export const Footer = () => {
+export const Footer = ({
+  setActiveNav,
+}: {
+  setActiveNav: React.Dispatch<string>;
+}) => {
   const navItems = ["home", "skills", "projects", "contact"];
   const socials = [
     {
@@ -20,7 +25,11 @@ export const Footer = () => {
       <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav className="flex flex-wrap justify-center -mx-5 -my-2" id="">
           {navItems.map((item, index) => (
-            <div className="px-5 py-2" key={`footer-${item}-${index}`}>
+            <div
+              className="px-5 py-2"
+              key={`footer-${item}-${index}`}
+              onClick={() => setActiveNav(`#${item}`)}
+            >
               <Link href={`/#${item}`}>
                 <a className="text-base leading-6 text-gray-400 hover:text-white capitalize">
                   {item}

@@ -4,9 +4,14 @@ import { HiMenu } from "react-icons/hi";
 import { Drawer } from "./Drawer";
 import Link from "next/link";
 
-export const Navbar = () => {
+export const Navbar = ({
+  activeNav,
+  setActiveNav,
+}: {
+  activeNav: string;
+  setActiveNav: React.Dispatch<string>;
+}) => {
   const navItems = ["home", "skills", "projects", "contact"];
-  const [activeNav, setActiveNav] = useState("#home");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 

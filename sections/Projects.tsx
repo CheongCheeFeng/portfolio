@@ -48,8 +48,8 @@ export const Projects = () => {
         <div className="text-center py-[70px] px-[50px]">
           <h2 className="text-5xl font-bold">Projects</h2>
           <p className="text-[#B8B8B8] text-lg mt-3 ">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+            List of projects I have worked on in the past during my time at
+            Monash University Malaysia.
           </p>
         </div>
         <div className="flex flex-wrap justify-center items-center">

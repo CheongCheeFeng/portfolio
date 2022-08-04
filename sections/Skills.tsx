@@ -20,8 +20,7 @@ export const Skills = () => {
         <div className="bg-[#171717] rounded-[64px] text-center py-[60px] px-[50px]">
           <h2 className="text-5xl font-bold">Skills & Languages</h2>
           <p className="text-[#B8B8B8] text-lg mt-3 mb-16">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+            List of skills and programming languages I have experience with.
           </p>
           <div className="flex flex-col 2xl:flex-row justify-center items-center">
             <div className=" flex flex-wrap items-center 2xl:w-1/2 justify-center 2xl:justify-center 2xl:mr-10">

@@ -69,10 +69,10 @@ export const Home = ({
           <span className="box-border inline-block w-1 h-12 -mb-2 bg-gray-500 opacity-75 animate-cursor"></span>
         </span>
         <div className="text-xl lg:text-2xl py-4">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, eius
-          dignissimos ullam quis fugiat delectus necessitatibus ab. Odio eius
-          voluptatum, excepturi nam eaque, praesentium nobis doloribus placeat
-          ducimus minima nihil.
+          I am a fresh graduate from Monash University Malaysia with Bachelor's
+          Degree in Software Engineering. I am experience with frontend
+          development using frontend framework such as React. I also have a
+          strong background on data structures, algorithms and etc.
         </div>
         <a
           className="flex justify-left items-center text-xl font-bold my-4 group"

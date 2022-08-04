@@ -1,3 +1,5 @@
+## [Live Website](https://portfolio-cheongcheefeng.vercel.app/)
+
 ## Features
 
 - **Home** - About me and my resume

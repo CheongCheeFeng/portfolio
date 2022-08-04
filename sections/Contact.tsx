@@ -1,12 +1,48 @@
-import { useState } from "react";
+import { FormEvent, useRef, useState } from "react";
+import cogoToast from "cogo-toast";
+import emailjs from "@emailjs/browser";
 
 export const Contact = () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const form: any = useRef();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const sendMessage = () => {
-    console.log(name, email, message);
+  const clearInput = () => {
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
+
+  const sendMessage = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    cogoToast
+      .loading("Sending your message...", {
+        position: "bottom-center",
+      })
+      .then(() => {
+        return emailjs.sendForm(
+          "service_qkbce3r",
+          "template_bg4ikif",
+          form.current,
+          process.env.NEXT_PUBLIC_EMAILJS_USERID
+        );
+      })
+      .then(() => {
+        cogoToast.success("Successfully sent the message!", {
+          position: "bottom-center",
+        });
+        clearInput();
+      })
+      .catch((error) => {
+        console.log(error);
+        cogoToast.error("Failed to send the message!", {
+          position: "bottom-center",
+        });
+      });
+    e.currentTarget.reset();
   };
 
   return (
@@ -32,12 +68,7 @@ export const Contact = () => {
             or message me here:
           </p>
           <div className="relative mx-auto w-full max-w-lg text-left">
-            <form action="https://api.web3forms.com/submit" className="mt-10">
-              <input
-                type="hidden"
-                name="access_key"
-                value="YOUR_ACCESS_KEY_HERE"
-              />
+            <form className="mt-10" ref={form} onSubmit={(e) => sendMessage(e)}>
               <div className="grid gap-6 sm:grid-cols-1">
                 <div className="relative z-0 col-span-2">
                   <input
@@ -45,7 +76,9 @@ export const Contact = () => {
                     name="name"
                     className="peer block w-full appearance-none border-0 border-b border-gray-200 bg-transparent py-2.5 px-0 text-sm md:text-lg text-white focus:border-white focus:outline-none focus:ring-0"
                     placeholder=" "
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
+                    required
                   />
                   <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm md:text-lg text-gray-200 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-white ">
                     Your name
@@ -53,11 +86,13 @@ export const Contact = () => {
                 </div>
                 <div className="relative z-0 col-span-2">
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     className="peer block w-full appearance-none border-0 border-b border-gray-200 bg-transparent py-2.5 px-0 text-sm md:text-lg text-white focus:border-white focus:outline-none focus:ring-0 autofill:bg-transparent "
                     placeholder=" "
+                    value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
                   <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm md:text-lg text-gray-200 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-white">
                     Your email
@@ -69,7 +104,9 @@ export const Contact = () => {
                     rows={5}
                     className="peer block w-full appearance-none border-0 border-b border-gray-200 bg-transparent py-2.5 px-0 text-sm md:text-lg text-white focus:border-white focus:outline-none focus:ring-0 min-h-[80px]"
                     placeholder=" "
+                    value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    required
                   ></textarea>
                   <label className="absolute top-3 -z-10 origin-[0] -translate-y-6 scale-75 transform text-sm md:text-lg text-gray-200 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:left-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:text-white">
                     Your message
@@ -79,7 +116,6 @@ export const Contact = () => {
               <button
                 type="submit"
                 className="absolute right-0 mt-5 rounded-md bg-white px-10 py-2 text-black font-semibold bg-opacity-90 hover:bg-opacity-100"
-                onClick={sendMessage}
               >
                 Send Message
               </button>

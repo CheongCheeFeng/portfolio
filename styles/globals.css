@@ -23,6 +23,13 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer components {
+  .ct-toast-success {
+    color: #ffffff;
+    background: #0b4a00;
+  }
+}
+
 @layer base {
   html,
   body {

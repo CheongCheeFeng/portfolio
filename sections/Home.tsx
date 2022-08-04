@@ -101,7 +101,7 @@ export const Home = ({
       <div className=" absolute -bottom-6 right-12 w-2/3 h-auto ml-auto xl:static xl:flex xl:ml-auto">
         <img
           className="animate-updown w-full h-auto  ml-auto  sm:w-[350px] sm:h-[100] md:w-[400px]  xl:w-[600px]"
-          src={"/me.svg"}
+          src={"/images/me.svg"}
           alt={"my drawing"}
         />
       </div>

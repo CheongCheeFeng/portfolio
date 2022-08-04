@@ -36,7 +36,7 @@ export const Navbar = ({
     >
       <div className="flex justify-start items-center">
         <Image
-          src={"/logo.svg"}
+          src={"/images/logo.svg"}
           alt="logo"
           layout="fixed"
           width={56}
@@ -58,7 +58,7 @@ export const Navbar = ({
             <Link href={`/#${item}`}>
               <a
                 className={`text-white no-underline uppercase font-medium text-lg
-              transision-all duration-200 ease-in-out opacity-75 group-hover:opacity-100 
+              transision-all duration-200 ease-in-out group-hover:opacity-100 
               ${activeNav === "#" + item ? "opacity-100" : "opacity-75"}`}
               >
                 {item}

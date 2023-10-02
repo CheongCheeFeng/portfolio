@@ -13,7 +13,7 @@ export const Home = ({
   const period = 2000;
 
   useEffect(() => {
-    const toRotate = ["Freelancer", "Software Engineer"];
+    const toRotate = ["Android Engineer", "Software Engineer"];
     const tick = () => {
       const i = loopNum % toRotate.length;
       const fullText = toRotate[i];

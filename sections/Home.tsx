@@ -76,7 +76,7 @@ export const Home = ({
         </div>
         <a
           className="flex justify-left items-center text-xl font-bold my-4 group"
-          href="https://drive.google.com/file/d/1xmqSI5q_9E5kyEExMjfROJhpHHGxHeNu/view?usp=sharing"
+          href="https://drive.google.com/drive/folders/1DhVZtFr2UUp16zlKZtkn3CmwnQE4LB5U?usp=sharing"
           target="_blank"
           rel="noreferrer"
         >
